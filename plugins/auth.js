@@ -6,15 +6,12 @@ import fastifyJwt from '@fastify/jwt'
  * @param {import('fastify').FastifyInstance} fastify 
  */
 async function appAuthentication(fastify,opts)  {
-
-    const revokedTokens =  new Map()
-
-    fastify.register(fastifyJwt, {
+    fastify.decorate('authenticate', async function (){
 
     })
-    
-    fastify.decorateRequest()
-    fastify.decorateRequest()
+    fastify.decorate('authorize', async function () {
+        
+    })
    
 }
 
